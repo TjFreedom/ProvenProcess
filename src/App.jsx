@@ -436,7 +436,7 @@ export default function SOPSystem() {
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem("fdh-sops-v3");
+      const stored = localStorage.getItem("fdh-sops-v4");
       setSops(stored ? JSON.parse(stored) : SEED);
     } catch { setSops(SEED); }
     setLoaded(true);
@@ -444,7 +444,7 @@ export default function SOPSystem() {
 
   useEffect(() => {
     if (!loaded) return;
-    try { localStorage.setItem("fdh-sops-v3", JSON.stringify(sops)); } catch {}
+    try { localStorage.setItem("fdh-sops-v4", JSON.stringify(sops)); } catch {}
   }, [sops, loaded]);
 
   function notify(msg, type = "ok") {
